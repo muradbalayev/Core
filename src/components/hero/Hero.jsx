@@ -44,7 +44,7 @@ export default function Hero() {
               View Work
             </Link>
             <Link
-              href="mailto:hello@core.studio"
+              href="/contact"
               className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-5 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               Contact Us

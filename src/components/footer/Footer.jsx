@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-10 border-t border-border/60 bg-background/80 text-foreground">
+    <footer className="border-t border-border/60 bg-background/80 text-foreground">
       <div className="wrapper mx-auto">
         <div className="mx-auto px-4 sm:px-6 py-10 md:py-14">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
@@ -28,7 +28,7 @@ export default function Footer() {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li><Link href="#portfolio" className="hover:text-foreground">Portfolio</Link></li>
                 <li><Link href="#" className="hover:text-foreground">About</Link></li>
-                <li><Link href="#" className="hover:text-foreground">Careers</Link></li>
+                {/* <li><Link href="#" className="hover:text-foreground">Careers</Link></li> */}
                 <li><Link href="mailto:hello@core.studio" className="hover:text-foreground">Contact</Link></li>
               </ul>
             </div>
@@ -44,12 +44,12 @@ export default function Footer() {
           </div>
 
           <div className="mt-10 flex flex-col-reverse items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-muted-foreground sm:flex-row">
-            <p>© {year} CoreStudio. All rights reserved.</p>
-            <div className="flex items-center gap-4">
+            <p>© {year} Core Studio. All rights reserved.</p>
+            {/* <div className="flex items-center gap-4">
               <span className="rounded-md border border-border/60 bg-background/70 px-2.5 py-1">Next.js</span>
               <span className="rounded-md border border-border/60 bg-background/70 px-2.5 py-1">React Native</span>
               <span className="rounded-md border border-border/60 bg-background/70 px-2.5 py-1">Tailwind</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

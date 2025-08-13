@@ -12,10 +12,10 @@ import { FlowButton } from "../ui/flow-button";
 
 const menuLinks = [
   { path: "/", label: "Home" },
-  { path: "/work", label: "Work" },
+  // { path: "/work", label: "Work" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
-  { path: "/lab", label: "Lab" },
+  // { path: "/lab", label: "Lab" },
 ];
 
 const Menu = () => {
@@ -63,7 +63,7 @@ const Menu = () => {
       <div className="menu-bar">
         <div className="menu-logo">
           <Link href="/">
-          <Image src="/assets/images/logoBg.png" alt="logo" className="w-full h-full object-contain" width={80} height={40}/>
+          <Image src="/assets/images/logoBg.png" alt="logo" className="md:w-24 w-20 object-contain" width={80} height={40}/>
           </Link>
         </div>
         <div className="menu-open" onClick={toggleMenu}>
