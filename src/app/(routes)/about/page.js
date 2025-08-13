@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import murad from '@/assets/team/murad.jpg'
+import matin from '@/assets/team/matin.jpg'
 
 export default function AboutPage() {
   const stats = [
@@ -54,7 +55,7 @@ export default function AboutPage() {
       }
     },
     {
-      name: 'Nurxan',
+      name: 'Nurxan Quliyev',
       role: 'UX/UI Designer',
       image: murad,
       social: {
@@ -64,9 +65,9 @@ export default function AboutPage() {
       }
     },
     {
-      name: 'Matin',
+      name: 'Matin Gafarov',
       role: 'Project Manager',
-      image: murad,
+      image: matin,
       social: {
         twitter: '#',
         linkedin: '#',
@@ -196,8 +197,8 @@ export default function AboutPage() {
                   <Image
                     src={member.image} 
                     alt={member.name}
-                    width={100}
-                    height={100}
+                    width={1500}
+                    height={1500}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
