@@ -259,7 +259,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Ready to start your project?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Let's work together to bring your ideas to life. Get in touch with us today to discuss your project.
+              Let&apos;s work together to bring your ideas to life. Get in touch with us today to discuss your project.
             </p>
             <Button size="lg" asChild>
               <Link href="/contact">Get in touch</Link>
