@@ -104,4 +104,10 @@
   .menu-link-item-holder a {
     font-size: 60px;
   }
+
+ .menu-bar,
+ .menu-overlay-bar {
+   padding: 1em;
+   width: 100%;
+ }
 }

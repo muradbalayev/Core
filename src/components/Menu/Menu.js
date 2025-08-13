@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import "./menu.css";
@@ -21,7 +22,9 @@ const menuLinks = [
 const Menu = () => {
   const container = useRef();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const menuBarRef = useRef();
   const tl = useRef();
 
   const toggleMenu = () => {
@@ -57,13 +60,51 @@ const Menu = () => {
     }
   }, [isMenuOpen]);
 
+  // Handle scroll to show/hide menu bar
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Always show menu when at the top of the page
+      if (currentScrollY <= 0) {
+        setIsScrolled(false);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+
+      // Scrolling down
+      if (currentScrollY > lastScrollY && !isScrolled) {
+        setIsScrolled(true);
+      } 
+      // Scrolling up
+      else if (currentScrollY < lastScrollY && isScrolled) {
+        setIsScrolled(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Clean up
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isScrolled, lastScrollY]);
+
   return (
     <div className="menu-container" ref={container}>
       {/* menu-bar */}
-      <div className="menu-bar">
+      <div 
+        ref={menuBarRef}
+        className={`menu-bar ${isScrolled ? 'menu-bar--hidden' : ''}`}
+        style={{
+          transition: 'transform 0.3s ease-in-out',
+          transform: isScrolled ? 'translateY(-100%)' : 'translateY(0)'
+        }}
+      >
         <div className="menu-logo">
           <Link href="/">
-          <Image src="/assets/images/logoBg.png" alt="logo" className="md:w-24 w-20 object-contain" width={80} height={40}/>
+          <Image src="/assets/images/logoBg.png" alt="logo" className="md:w-24 sm:w-20 w-16 object-contain" width={80} height={40}/>
           </Link>
         </div>
         <div className="menu-open" onClick={toggleMenu}>
@@ -77,7 +118,7 @@ const Menu = () => {
         <div className="menu-overlay-bar">
           <div className="menu-logo">
             <Link href="/">
-            <Image src="/assets/images/logoBgWhite.png" alt="logo" className="w-full h-full object-contain" width={80} height={40} />
+            <Image src="/assets/images/logoBgWhite.png" alt="logo" className="md:w-24 sm:w-20 w-16 object-contain" width={80} height={40} />
             </Link>
           </div>
           <div className="menu-close">
