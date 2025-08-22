@@ -7,8 +7,11 @@ import coffee2 from '@/assets/projects/coffee/coffee-2.png'
 import coffee3 from '@/assets/projects/coffee/coffee-3.png'
 import coffee4 from '@/assets/projects/coffee/coffee-4.png'
 import valser1 from '@/assets/projects/valser/valser-1.png'
+import valser2 from '@/assets/projects/valser/valser-2.png'
 import ddw1 from '@/assets/projects/ddw/ddw-1.png'
 import bantik1 from '@/assets/projects/bantik/bantik-1.png'
+// import bantik2 from '@/assets/projects/bantik/bantik-2.png'
+import bantik4 from '@/assets/projects/bantik/bantik-4.png'
 
 
 export const portfolio = [
@@ -38,7 +41,7 @@ export const portfolio = [
     type: 'Website',
     description: 'New website for Valser',
     slug: 'valser',
-    image: [valser1],
+    image: [ valser2],
     tech: ['React', 'Tailwind', 'MongoDB', 'Node.js'],
     link: { href: 'https://valser.az', label: 'Website' },
   },
@@ -58,7 +61,7 @@ export const portfolio = [
     type: 'Website',
     description: 'New website and Mobile App for Bantik',
     slug: 'bantik',
-    image: [bantik1],
+    image: [bantik4],
     tech: ['React', 'Tailwind', 'MongoDB', 'Node.js'],
     link: { href: 'https://bantik.az', label: 'Website' },
   }

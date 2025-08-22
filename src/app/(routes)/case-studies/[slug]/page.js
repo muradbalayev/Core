@@ -5,7 +5,7 @@ import { CASE_STUDIES } from "@/hooks/ProjectDatas";
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const item = CASE_STUDIES[slug];
-  const title = item ? `${item.title} — CoreStudio` : `Case Study — CoreStudio`;
+  const title = item ? `${item.title} — Core Studio` : `Case Study — CoreStudio`;
   return { title };
 }
 

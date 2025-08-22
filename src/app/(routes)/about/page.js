@@ -128,7 +128,7 @@ export default function AboutPage() {
             </h2>
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-6">
-                Founded in 2022, Core Studio was born from a passion for
+                Founded in 2024, Core Studio was born from a passion for
                 creating exceptional digital experiences. What started as a
                 small team of dedicated developers has grown into a full-service
                 web and mobile development studio.
