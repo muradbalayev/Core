@@ -1,96 +1,72 @@
 "use client";
 
-import { Code, Lightbulb, Smartphone, Globe, Users, CheckCircle, Github, Linkedin, Twitter } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import Image from 'next/image';
-import murad from '@/assets/team/murad.jpg'
-import matin from '@/assets/team/matin.jpg'
+import {
+  Code,
+  Lightbulb,
+  Smartphone,
+  Globe,
+  Users,
+  CheckCircle,
+  Github,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import murad from "@/assets/team/murad.jpg";
+import matin from "@/assets/team/matin.jpg";
+import Team from "./components/Team";
 
 export default function AboutPage() {
   const stats = [
-    { value: '10+', label: 'Projects Completed' },
-    { value: '5+', label: 'Happy Clients' },
-    { value: '3+', label: 'Years Experience' },
-    { value: '100%', label: 'Client Satisfaction' },
+    { value: "10+", label: "Projects Completed" },
+    { value: "5+", label: "Happy Clients" },
+    { value: "3+", label: "Years Experience" },
+    { value: "100%", label: "Client Satisfaction" },
   ];
 
   const services = [
     {
       icon: <Code className="h-6 w-6 text-primary" />,
-      title: 'Web Development',
-      description: 'Custom websites and web applications built with modern technologies like Next.js and React.'
+      title: "Web Development",
+      description:
+        "Custom websites and web applications built with modern technologies like Next.js and React.",
     },
     {
       icon: <Smartphone className="h-6 w-6 text-primary" />,
-      title: 'Mobile Development',
-      description: 'Cross-platform mobile applications that work seamlessly on both iOS and Android.'
+      title: "Mobile Development",
+      description:
+        "Cross-platform mobile applications that work seamlessly on both iOS and Android.",
     },
     {
       icon: <Globe className="h-6 w-6 text-primary" />,
-      title: 'Full-Stack Solutions',
-      description: 'End-to-end development services from database design to frontend implementation.'
+      title: "Full-Stack Solutions",
+      description:
+        "End-to-end development services from database design to frontend implementation.",
     },
   ];
 
-  const teamMembers = [
-    {
-      name: 'Murad Balayev',
-      role: 'Founder & Front-End Developer',
-      image: murad,
-      social: {
-        twitter: '#',
-        linkedin: '#',
-        github: '#'
-      }
-    },
-    {
-      name: 'Ali Aghayev',
-      role: 'Founder & FullStack Developer',
-      image: murad,
-      social: {
-        twitter: '#',
-        linkedin: '#',
-        github: '#'
-      }
-    },
-    {
-      name: 'Nurxan Quliyev',
-      role: 'UX/UI Designer',
-      image: murad,
-      social: {
-        twitter: '#',
-        linkedin: '#',
-        github: '#'
-      }
-    },
-    {
-      name: 'Matin Gafarov',
-      role: 'Project Manager',
-      image: matin,
-      social: {
-        twitter: '#',
-        linkedin: '#',
-        github: '#'
-      }
-    }
-  ];
+ 
 
   const values = [
     {
       icon: <Lightbulb className="h-5 w-5 text-primary" />,
-      title: 'Innovation',
-      description: 'We stay ahead of the curve with cutting-edge technologies and creative solutions.'
+      title: "Innovation",
+      description:
+        "We stay ahead of the curve with cutting-edge technologies and creative solutions.",
     },
     {
       icon: <CheckCircle className="h-5 w-5 text-primary" />,
-      title: 'Quality',
-      description: 'We deliver pixel-perfect, high-performance applications that exceed expectations.'
+      title: "Quality",
+      description:
+        "We deliver pixel-perfect, high-performance applications that exceed expectations.",
     },
     {
       icon: <Users className="h-5 w-5 text-primary" />,
-      title: 'Collaboration',
-      description: 'We work closely with our clients to understand their vision and bring it to life.'
+      title: "Collaboration",
+      description:
+        "We work closely with our clients to understand their vision and bring it to life.",
     },
   ];
 
@@ -108,7 +84,9 @@ export default function AboutPage() {
               We turn ideas into digital experiences
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Core Studio is a web and mobile development studio dedicated to creating exceptional digital products that drive results for our clients.
+              Core Studio is a web and mobile development studio dedicated to
+              creating exceptional digital products that drive results for our
+              clients.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild>
@@ -127,9 +105,14 @@ export default function AboutPage() {
         <div className="container px-4 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center p-6 bg-background rounded-xl border border-border/50">
+              <div
+                key={index}
+                className="text-center p-6 bg-background rounded-xl border border-border/50"
+              >
                 <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -140,16 +123,26 @@ export default function AboutPage() {
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Our Story</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
+              Our Story
+            </h2>
             <div className="prose prose-lg text-muted-foreground">
               <p className="mb-6">
-                Founded in 2022, Core Studio was born from a passion for creating exceptional digital experiences. What started as a small team of dedicated developers has grown into a full-service web and mobile development studio.
+                Founded in 2022, Core Studio was born from a passion for
+                creating exceptional digital experiences. What started as a
+                small team of dedicated developers has grown into a full-service
+                web and mobile development studio.
               </p>
               <p className="mb-6">
-                We believe in the power of technology to transform businesses and create meaningful connections. Our approach combines technical expertise with creative thinking to deliver solutions that not only look great but also drive real results.
+                We believe in the power of technology to transform businesses
+                and create meaningful connections. Our approach combines
+                technical expertise with creative thinking to deliver solutions
+                that not only look great but also drive real results.
               </p>
               <p>
-                Today, we&apos;re proud to work with businesses of all sizes, from ambitious startups to established enterprises, helping them navigate the digital landscape and achieve their goals.
+                Today, we&apos;re proud to work with businesses of all sizes,
+                from ambitious startups to established enterprises, helping them
+                navigate the digital landscape and achieve their goals.
               </p>
             </div>
           </div>
@@ -160,15 +153,21 @@ export default function AboutPage() {
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+              Our Services
+            </h2>
             <p className="text-muted-foreground">
-              We offer comprehensive digital solutions tailored to your business needs
+              We offer comprehensive digital solutions tailored to your business
+              needs
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-background p-8 rounded-xl border border-border/50 hover:shadow-lg transition-shadow">
+              <div
+                key={index}
+                className="bg-background p-8 rounded-xl border border-border/50 hover:shadow-lg transition-shadow"
+              >
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
                   {service.icon}
                 </div>
@@ -181,59 +180,15 @@ export default function AboutPage() {
       </section>
 
       {/* Team Members */}
-      <section className="py-16 md:py-24 bg-muted/10">
-        <div className="container px-4 mx-auto">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Our Team</h2>
-            <p className="text-muted-foreground">
-              Meet the talented individuals behind Core Studio
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="group text-center">
-                <div className="relative overflow-hidden rounded-lg mb-4 aspect-[3/4] mx-auto max-w-[250px]">
-                  <Image
-                    src={member.image} 
-                    alt={member.name}
-                    width={1500}
-                    height={1500}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                    <div className="flex gap-3">
-                      {member.social.twitter && (
-                        <a href={member.social.twitter} target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
-                          <Twitter className="w-5 h-5" />
-                        </a>
-                      )}
-                      {member.social.linkedin && (
-                        <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                      )}
-                      {member.social.github && (
-                        <a href={member.social.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-primary transition-colors">
-                          <Github className="w-5 h-5" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-muted-foreground text-sm">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Team />
 
       {/* Our Values */}
       <section className="py-16 md:py-24">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 text-center">Our Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 text-center">
+              Our Values
+            </h2>
             <div className="space-y-8">
               {values.map((value, index) => (
                 <div key={index} className="flex gap-4">
@@ -243,7 +198,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {value.title}
+                    </h3>
                     <p className="text-muted-foreground">{value.description}</p>
                   </div>
                 </div>
@@ -257,9 +214,12 @@ export default function AboutPage() {
       <section className="py-16 md:py-24 bg-primary/5">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">Ready to start your project?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+              Ready to start your project?
+            </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Let&apos;s work together to bring your ideas to life. Get in touch with us today to discuss your project.
+              Let&apos;s work together to bring your ideas to life. Get in touch
+              with us today to discuss your project.
             </p>
             <Button size="lg" asChild>
               <Link href="/contact">Get in touch</Link>

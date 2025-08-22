@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { CASE_STUDIES } from "@/hooks/ProjectDatas";
 
-
 export async function generateMetadata({ params }) {
   const { slug } = params;
   const item = CASE_STUDIES[slug];
@@ -18,10 +17,16 @@ export default function CaseStudyPage({ params }) {
     return (
       <section className="wrapper mx-auto page-content">
         <div className="mx-auto px-4 sm:px-6">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">Case study not found</h1>
-          <p className="mt-4 text-sm text-muted-foreground">The requested project doesn&apos;t exist yet.</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+            Case study not found
+          </h1>
+          <p className="mt-4 text-sm text-muted-foreground">
+            The requested project doesn&apos;t exist yet.
+          </p>
           <div className="mt-6">
-            <Link href="/" className="underline">Go back home</Link>
+            <Link href="/" className="underline">
+              Go back home
+            </Link>
           </div>
         </div>
       </section>
@@ -29,14 +34,18 @@ export default function CaseStudyPage({ params }) {
   }
 
   return (
-    <section className="wrapper mx-auto page-content">
-      <div className="mx-auto px-4 sm:px-6">
+    <section className="wrapper mx-auto page-content sm:mt-10">
+      <div className="mx-auto px-0 sm:px-6">
         {/* Header */}
-        <div className="mb-6 sm:mb-8 flex items-start justify-between gap-6">
+        <div className="mb-6 sm:mb-8 flex sm:flex-row flex-col items-start justify-between gap-6">
           <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">{item.title}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+              {item.title}
+            </h1>
             {item.client && (
-              <div className="mt-2 text-sm text-muted-foreground">{item.client}</div>
+              <div className="mt-2 text-sm text-muted-foreground">
+                {item.client}
+              </div>
             )}
           </div>
           {item.link?.href && (
@@ -63,21 +72,21 @@ export default function CaseStudyPage({ params }) {
 
         {/* Images stack */}
         <div className="mt-8 sm:mt-10 space-y-6">
-  {item.images.map((src, idx) => {
-    // Əgər src obyekt tipindədirsə (local şəkil), onun .src property-sini götür
-    const imgSrc = typeof src === "string" ? src : src.src;
-    return (
-      <figure key={idx} className="overflow-hidden rounded-xl bg-muted">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={imgSrc}
-          alt={`${item.title} image ${idx + 1}`}
-          className="w-full h-auto object-cover"
-        />
-      </figure>
-    );
-  })}
-</div>
+          {item.images.map((src, idx) => {
+            // Əgər src obyekt tipindədirsə (local şəkil), onun .src property-sini götür
+            const imgSrc = typeof src === "string" ? src : src.src;
+            return (
+              <figure key={idx} className="overflow-hidden rounded-xl bg-muted">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={imgSrc}
+                  alt={`${item.title} image ${idx + 1}`}
+                  className="w-full h-auto object-cover"
+                />
+              </figure>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

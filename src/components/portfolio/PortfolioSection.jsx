@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // Reusable badge (shadcn-like) using Tailwind tokens from globals.css
 const TechBadge = ({ children }) => (
@@ -16,17 +17,37 @@ const Card = ({ children }) => (
 );
 
 const CardImage = ({ src, alt, children }) => {
-  // Əgər obyekt gəlibsə (local import), .src property-sini götür
-  const imgSrc = typeof src === "string" ? src : src?.src;
+  // src single or [img1, img2]
+  const toSrc = (s) => (typeof s === "string" ? s : s?.src);
+  const isArray = Array.isArray(src);
+  const first = isArray ? toSrc(src[0]) : toSrc(src);
+  const second = isArray && src.length > 1 ? toSrc(src[1]) : null;
 
   return (
     <div className="relative aspect-[16/9] w-full overflow-hidden bg-muted rounded-lg">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={imgSrc}
+      {/* Base image */}
+      <Image
+        width={1900}
+        height={1080}
+        src={first}
         alt={alt}
+        priority={false}
+        style={{ willChange: "transform" }}
         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
       />
+
+      {/* Hover image (if provided) */}
+      {second && (
+        <Image
+          width={1900}
+          height={1080}
+          src={second}
+          alt={alt}
+          style={{ willChange: "opacity" }}
+          className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        />
+      )}
+
       <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/5 dark:ring-white/10" />
       {children}
     </div>
@@ -81,7 +102,7 @@ const CardFooter = ({ tech = [], link }) => (
  *     title: string,
  *     type: 'Mobile App' | 'Web App' | string,
  *     description: string,
- *     image: string, // URL
+ *     image: string | object | Array<string|object>,
  *     tech: string[],
  *     link?: { href: string, label?: string, target?: string }
  *   }>
@@ -94,7 +115,7 @@ const toSlug = (s = "") =>
 
 export default function PortfolioSection({ id = "portfolio", title = "Portfolio", subtitle = "Selected work by CoreStudio", items = [] }) {
   return (
-    <section id={id} className=" mx-auto wrapper">
+    <section id={id} className="mx-auto wrapper">
       <div className="mb-8 sm:mb-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
           {title}
@@ -118,9 +139,11 @@ export default function PortfolioSection({ id = "portfolio", title = "Portfolio"
                 {/* optional small logo on image */}
                 {item.logo && (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img
+                  <Image
                     src={item.logo}
                     alt="logo"
+                    width={24}
+                    height={24}
                     className="absolute left-3 top-3 h-6 w-6 rounded-md border border-border bg-background/80 p-1 shadow-sm backdrop-blur"
                   />
                 )}

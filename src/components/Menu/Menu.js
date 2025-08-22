@@ -121,7 +121,7 @@ const Menu = () => {
             <Image src="/assets/images/logoBgWhite.png" alt="logo" className="md:w-24 sm:w-20 w-16 object-contain" width={80} height={40} />
             </Link>
           </div>
-          <div className="menu-close">
+          <div className="menu-close sm:pr-8 pr-5 pt-2 font-medium">
             <p onClick={toggleMenu}>Close</p>
           </div>
         </div>
@@ -144,14 +144,13 @@ const Menu = () => {
           </div>
           <div className="menu-info">
             <div className="menu-info-col text-white">
-              <a href="#">X &#8599;</a>
-              <a href="#">Instagram &#8599;</a>
-              <a href="#">LinkedIn &#8599;</a>
-              <a href="#">Behance &#8599;</a>
-              <a href="#">Dribbble &#8599;</a>
+              <a href="https://www.instagram.com/corestudio0/">Instagram &#8599;</a>
+              <a href="https://www.linkedin.com/company/core-studioaz/">LinkedIn &#8599;</a>
+              {/* <a href="#">Behance &#8599;</a> */}
+              {/* <a href="#">Dribbble &#8599;</a> */}
             </div>
             <div className="menu-info-col text-white">
-              <p>info@core.studio</p>
+              <p>corestudio007@gmail.com</p>
               <p>+994 70 740 50 80</p>
             </div>
           </div>
